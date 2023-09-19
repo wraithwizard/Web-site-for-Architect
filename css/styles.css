@@ -1,0 +1,725 @@
+/*color palette*/
+:root{
+    --dark : #000000;
+    --claro: #BFB49F;
+    --negro: #000000;
+    --light: #D7D7D9;  
+    --brown: #8C7561;
+    --azul: #80F2E7;
+    --gris: #384D59;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+}     
+h1{
+    text-align: center; 
+    text-shadow: -1px 0 black, 0 4px black, 0px 0 black, 0 -1px black;
+}
+br {
+    content: "";
+    margin: -5rem;
+    display: block;
+}
+h4{
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    font-size: 2rem;
+}
+a{
+    text-decoration: none;
+    /* remueve el color azul al darle click del <a>*/
+    color: inherit;
+}
+body{
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: grey;
+}
+.container{
+    /* background-image: url(../img/start.webp); */
+    background-image: url(../img/start.jpg);
+    height: 25rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 40%;
+}
+.logo__bold{
+    font-weight:bold;   
+    font-family: 'Goldman', cursive, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: grey;
+}
+.logo__h1{
+    font-family: 'Goldman', cursive, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    padding-top: 20rem;
+    color: grey;
+    font-size: 3rem;
+}
+.canvasa{
+    border-color: black;
+    border-style: solid; 
+    overflow: hidden;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+/***********Loader*************/
+#myCanvas {	 	
+	opacity: 1;
+ 	transition: 1s opacity;   
+     position: relative;
+}  
+.loader {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    width: 150px;
+    height: 150px;
+    margin: -155px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ffffff;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    opacity: 1;
+}
+.loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9fbffb;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+.loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #00000060;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/*---------------------------------------- animated text -------------------------------- */
+.logo__passion{
+    color: black;
+    font-family: 'Goldman', cursive, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;  
+    margin-top: 20rem;
+    margin-bottom: 0;
+    overflow: hidden; /*important para que no se salga el texto y agrande el div */
+    text-shadow: -1px 0 grey, 0 1px grey, 0px 0 grey, 0 -1px grey;
+}
+.logo__passion h2{
+    font-size: 2rem; 
+}
+.logo__txt--anim{
+    animation-name: txtHeadScale;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+}
+@keyframes txtHeadScale{
+    0% {transform: scale(5);} 
+    100%{transform: scale(1);}
+}
+
+.container-black{
+    color: black;
+    font-family: 'Cinzel', serif;
+    font-size: xx-large;    
+    margin-top: 5rem;
+}
+.container-white{
+    background-color: var(--negro);
+    margin-top: -3.9rem;
+}
+.arq-span{
+    text-align: center;
+    font-size: 2.3rem;
+    margin-left: 1rem;
+}
+.passion-span{
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    color: grey;
+    transform: scaleY(2.5);
+    display: block;
+    padding-top: 0.5rem;
+}
+.la-span{
+    margin-left: 1rem;
+}
+.container-white{
+    height: 26rem;
+}
+.container__white--video{
+    padding-top: 6rem;
+    height: 20.5rem;
+    width: 100%;
+}
+.portofolio__txt{
+    padding: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+}
+.portofolio__residencias{
+    background-image: url(../img/residencias.webp);
+    background-position: top;
+    background-size: cover;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: var(--negro);
+    margin-bottom: 1rem;
+}
+.portofolio__residencias--description{
+    background-color: rgb(174, 174, 174);
+    width: 35%;
+    height: 10rem;
+    position: absolute;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+    visibility: hidden;
+    right: 0;
+}
+/* transicion para el js del div descripcion */
+.transition-opacity {   
+    transition:opacity 500ms;
+    opacity:80%;
+     /* animacion */
+     animation-name: slide;
+     animation-duration: 3s;
+     animation-iteration-count: 1; 
+     animation-timing-function: ease;
+     /* hace que se detenga en el ultimo frame */
+     animation-fill-mode: forwards;
+     border-radius: 2%;
+}
+@keyframes slide {
+    0% {right: 0px;}     
+    100% {right: 200px;}       
+}
+.portofolio__depas{
+    background-image: url(../img/depas.webp);
+    background-position: top;
+    background-size: contain;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: var(--negro);
+    margin-bottom: 1rem;
+}
+.portofolio__locales{
+    background-image: url(../img/local.jpg);
+    background-size: cover; 
+    background-position: top;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: #3B3839;
+    margin-bottom: 1rem;
+}
+.portofolio__restaurantes{
+    background-image: url(../img/locales/local.jpeg);
+    background-position: center;
+    background-size: contain;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: black;
+    margin-bottom: 1rem;
+}
+.portofolio__hoteles{
+    background-image: url(../img/hotel2.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: #3B3839;
+    margin-bottom: 1rem;    
+}
+.about{
+    background-image: url(../img/selfie.jpg);
+    background-position: top;
+    background-size: cover;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: var(--negro);
+    margin-bottom: 1rem;
+}
+.about-it{
+    text-align: center;
+    margin:auto 1rem;
+    padding: 1rem;
+}
+.acerca__arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.3rem 1.25rem;
+    margin-bottom: 1rem;
+}
+.acerca__arrow:hover{
+    color: white;  
+    background-color: var(--negro);
+}
+
+/* for JS */
+.inverter{
+    filter: invert(100%);
+}
+.normal{
+    filter: invert(0%);
+}
+
+/* ----------------------------- animated text ----------------------------------------- */
+.data{
+    background-color: var(--negro);
+    height: 12rem;
+    color: grey;
+    font-family: 'Goldman', cursive, Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;   
+    padding-top: 2rem;
+    margin-top: 6rem;
+    transform: scaleY(1.5);
+    font-weight: bolder;
+    overflow: hidden;
+}
+.data__int{ text-align: end; }
+/* txt animation */
+.data__arq, .data__int, .data__con{
+    animation-name: scale;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in-out;
+}
+@keyframes scale{
+    0% {transform: scale(10);}
+    100%{transform: scale(1);}
+} 
+.objectives{
+    margin-top: 5rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.final-photo{
+    background-image: url(../img/house.jpeg);
+    background-size: cover; 
+    background-position: center;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: #3B3839;
+    margin-bottom: 2rem;
+}
+
+.final-sketch{
+    background-image: url(../img/hotel.jpeg);
+    background-size: cover; 
+    background-position: top;
+    height: 20rem;
+    background-repeat: no-repeat;
+    background-color: #3B3839;
+    margin-bottom: 0;
+}
+
+.foot{
+    background-color: var(--dark);
+    height: 20rem;
+    margin-top: 2rem;
+    color: white;
+    font-size: large;
+    text-align: center;  
+}
+.foot__p{
+    padding-top: 2rem;
+}
+.foot__contact{
+    display: flex;
+    flex-direction: row;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.foot__net{
+     padding-top: 2rem;
+}
+.phone{
+    font-size: 2rem;
+}
+
+/*------------------------ burger ----------------------- */
+.burger{
+    background-color: var(--dark);
+    display: block;
+    padding: 0.15rem;
+    cursor: pointer;
+    border-radius: 10%;
+    border-style:solid;
+    border-color: white;
+    border-width: .01rem;
+    z-index: 1;
+    margin-right: 0.5rem;
+    margin-top: -14rem;
+    position: fixed;
+}
+/* .burger-position{
+    margin-top: 15rem;
+    margin-bottom: 0rem;
+} */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;    
+    background: var(--dark);
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    z-index: 1;
+    opacity: 80%;
+    list-style: none;
+    border-style: solid;
+    border-width: 0.01rem;
+    font-family: 'Goldman', cursive, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+    padding: 3.5rem 0;
+}
+.nav-links a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 1rem;  
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    margin-top: 2rem;
+}
+.nav-links a:hover{
+    color: #0BCBF2;
+}
+.current {
+    color: #0BCBF2;
+}
+.nav-links hr{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+.main-nav{
+    display: flex;
+    justify-content: flex-end;    
+    align-items: center;
+}
+.line {
+    height: 1.8px;
+    width: 1.2rem;
+    margin: 0.5rem 0.4rem;
+    background: white;
+    transition: transform 0.75s ease, opacity 0.75s ease;
+}
+.main-nav.show .line1 {
+    transform: translate(-10px) rotate(45deg) translate(15px);
+}
+.main-nav.show .line2 {
+    opacity: 0;
+}
+.main-nav.show .line3 {
+    transform: translate(-10px) rotate(-45deg) translate(15px);
+}
+.main-nav.show .nav-links {
+    transform: translateX(0%);
+}
+
+/** Fold **/
+@media screen and (max-width: 320px){  
+    h1{
+        margin: 0;
+    }
+    h4{     
+        font-size: 1.25rem;
+    }
+    .container-black{
+        height: 10rem;
+        margin-top: 4rem;
+    }
+    .arq-span{
+        font-size: 1.5rem;
+        margin-left: 1rem;
+        margin-top: 10rem;
+    }
+    .la-span{
+        margin-left: 0rem;
+    }
+    .passion-span{
+        font-size: 2.5rem;     
+        transform: scaleY(2.5);
+        padding-top: 1.5rem;
+        margin-top: 1rem;
+        text-shadow: -1px 0 black, 0 1px black, 0px 0 black, 0 -1px black;
+    }
+    .logo__passion{
+        margin-top: -3rem;      
+        font-size: 1.5rem;
+        padding-top: 15rem;
+        padding-bottom: 8rem;      
+    } 
+    .logo__passion h2{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+    .container-white{
+        margin-top: 1rem;
+    }
+    .portofolio__txt{
+        padding: 3rem; 
+        gap: 1rem;
+    }
+    .about-it{
+        font-size: large;
+    }
+    .objectives p{
+        font-size: large;
+    }
+    .data__div h2{
+        font-size: 1.5rem;
+    }
+    .data{
+        height: 10rem;      
+        padding-top: 2rem;
+        margin-top: 6rem;     
+    }     
+    .logo__h1{
+        padding-top: 2rem;
+        font-size: 2rem;
+        overflow: hidden;
+    }       
+    .foot__contact--email{
+        font-size: 0.85rem;
+    }
+}
+
+/**smartphone**/
+@media screen and (min-width: 320px) and (max-width: 768px){   
+    .logo__h1{
+        padding-top: 1rem;
+        margin: 0;
+    }
+    .logo__bold{      
+        font-size: 2.5rem;
+    }
+    .logo__passion{    
+        margin-top: 0;      
+        font-size: 1.5rem;
+        padding-top: 15rem;
+        padding-bottom: 8rem;     
+    }
+    .burger{      
+        margin-top: -10rem;
+    }  
+    .nav-links a{       
+        font-size: 1.2rem;
+    }    
+}
+
+/* tablet */
+@media screen and (min-width: 768px) {
+    .container{
+        height: 57rem;
+        padding-top: 0;
+    }
+    .logo__passion{
+        margin-top: 22rem;      
+        padding-top: 0rem;
+        padding-bottom: 8rem;  
+    } 
+    .logo__passion h2{
+        font-size: 4rem;
+        height: 10rem;
+    }
+    h1{
+        margin: 0;
+    }
+    .logo__h1{
+        padding-top: 2rem;
+        font-size: 6rem;
+        overflow: hidden;
+    }       
+    p{
+        font-size: 1.5rem;
+    }
+    .la-span{
+        text-align: center;
+        display: block;
+    }
+    .about{
+        background-position: 90%;
+    } 
+    .acerca__arrow{
+        font-size: 1.5rem;
+    }
+    .data__div{
+        font-size: 2.5rem ;
+    }
+    .data{
+        height: 17rem;
+    }   
+    .logo__bold{      
+        font-size: 6rem;
+    }
+    .burger{      
+        padding: 0.65rem;      
+        margin-top: -25rem;
+    }  
+    .nav-links a{       
+        font-size: 3rem;
+    }     
+} 
+
+/* Desktop */
+@media screen and (min-width: 1200px) {     
+    h4{
+        font-size: 4.5rem;
+    }
+    .container{
+        height: 30rem;
+        padding-top: 0;
+    }
+    .logo__passion{
+        margin-top: 9rem;      
+        padding-bottom: 5rem;      
+    } 
+    .logo__passion h2{
+        font-size: 3rem;
+        margin: 0rem;
+        height: 8rem;
+        
+    }
+    .container-black{
+        height: 10rem;
+        margin-top: 4rem;
+    }
+    .arq-span{
+        font-size: 6.5rem;
+        margin-left: 1rem;
+        margin-top: 10rem;
+    }
+    .la-span{
+        text-align: left;
+    }
+    .passion-span{
+        font-size: 5.5rem;     
+        transform: scaleY(2.5);
+        padding-top: 1.5rem;
+        margin-top: 1rem;
+        text-shadow: -1px 0 black, 0 1px black, 0px 0 black, 0 -1px black;
+    }  
+    .container-white{
+        margin-top: 1rem;
+        height: 47rem;
+        padding-top: 5rem;
+        margin-bottom: 2rem;
+    }
+    .portofolio__txt{
+        padding: 3rem; 
+        gap: 1rem;
+    }
+    .about-it{
+        font-size: large;
+    }
+    .about{
+        height: 23rem;     
+        background-size: contain;
+        background-position: center;        
+    }
+    .objectives p{
+        font-size: large;
+    }
+    .data__div h2{
+        font-size: 4.5rem;
+    }
+    .data{
+        height: 16rem;      
+        padding-top: 0;
+        margin-top: 6rem;     
+    }   
+    .burger{      
+        margin-top: -6rem;
+    }    
+    .nav-links {       
+       width: 25%;
+    }   
+    .work{
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container__white--video{
+        width: 100%;
+        height: auto;
+    }  
+    .portofolio__residencias, .portofolio__depas, .portofolio__locales, .portofolio__restaurantes, .portofolio__hoteles, .final-photo, .final-sketch{
+        height: 35rem;
+    }      
+    .portofolio__residencias--description{
+        margin-top: 25rem;
+        width: 10%;
+    }      
+    @keyframes slide {
+        0% {right: 0px;}     
+        100% {right: 400px;}       
+    } 
+}

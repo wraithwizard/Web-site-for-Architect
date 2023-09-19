@@ -1,0 +1,163 @@
+/* main css file */
+@import "styles.css";
+
+.container__hr{
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+.barra__bg{
+    background-color: var(--negro);
+    padding: 3rem;
+    text-align: center;
+    color: white;
+}
+.barra__bg p{
+    font-size: larger;
+    text-align: center;
+    margin-bottom: 0;
+}
+.barra__bg--txt{
+    margin-top: 1rem;
+}
+.barra__bg--title{
+    font-size: 1.5rem;
+    text-align: right;
+    font-family: 'Goldman', cursive, Arial, Helvetica, sans-serif;
+    color: grey;
+}
+.logo__bold{
+    transform: scaleY(1.5);
+    display: block;
+    margin-bottom: 2.5rem;
+}
+.container__white--video{
+    height: 13.9rem;
+    padding-top: 0rem;
+    margin-bottom: 0rem;
+}
+.about{
+    background-image: url(/img/selfie.webp);
+    background-position: top;
+    background-size: cover;
+    height: 20rem;
+    background-repeat: no-repeat;
+    margin-bottom: 0rem;
+    margin-top: -0.5rem;
+}
+.bio{
+    position: relative; /* mantiene al pseudoelemento dentro de sus limites */ 
+    height: 30rem;  
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bio::before{   
+    content: "";    /*necesario en el uso de un pseudoelemento before*/
+    background-image: url(/img/croquis.jpeg);   
+    background-size: cover;   
+    background-repeat: no-repeat;   
+    background-position: center;
+    opacity: 0.8;
+    position: absolute; /* hace el pesudo elemento del mismo tamaño que el padre (.bio)*/
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+.bio span{
+    color: white; 
+    position: relative; /*para que se posicione sobre la imagen */
+    background-color: black;
+    box-shadow: 0.5em 0 0 black,-0.5em 0 0 black;
+    text-align: center;
+    line-height: 1.5rem;
+}
+.bio p{
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 1.25rem;
+}
+.foot{
+    margin-top: 0rem;
+}
+
+/** Fold **/
+@media screen and (max-width: 320px){  
+    .logo__bold{   
+        font-size: 2rem;
+    }
+    .barra__bg--title{
+        text-align: center;
+    }
+    .burger{
+        margin-top: -67.5rem;
+    }
+}
+
+/**smartphone**/
+@media screen and (min-width: 320px) and (max-width: 768px){   
+    .burger{      
+        margin-top: -52rem;
+    }  
+    .nav-links a{       
+        font-size: 1.2rem;
+    }  
+    .barra__bg--title{
+        text-align: center;
+    }
+}
+
+/* tablet */
+@media screen and (min-width: 768px) {
+    .barra__bg--title{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .barra__bg p{
+        font-size: 1.5rem;
+    }
+    .bio p{
+        font-size: 1.5rem;
+    }
+    .container__white--video{
+        height: auto;
+        width: 100%;
+    }
+    .about{
+        background-position: 90%;
+        height: 60vh;
+    }
+    .burger{
+        margin-top: -53rem;
+    }
+    .nav-links a {
+        font-size: 3rem;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {      
+    .nav-links a {
+        font-size: 3rem;
+    }
+    .about{
+        height: 23rem;     
+        background-size: contain;
+        background-position: center;        
+    }
+    .burger{
+        margin-top: -42rem;
+    }
+    .container__hr{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bio{
+        height: 44rem;
+    }
+}
+

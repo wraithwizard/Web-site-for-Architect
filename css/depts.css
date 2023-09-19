@@ -1,0 +1,54 @@
+h2{
+    font-size: 1.9rem;
+}
+
+/** Fold **/
+@media screen and (max-width: 320px){  
+    h2{
+        font-size: 1.2rem;
+    }
+}
+
+/* tablet */
+@media screen and (min-width: 768px) {
+    h2{
+        font-size: 4rem;
+    }
+    .modal{     
+        padding-top: 7%; /* Location of the box */       
+    }
+}
+
+/* 100% Image Width on Smaller Screens */
+@media screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    .potofolio{
+        max-width: 60%;       
+    } 
+    .gallery{
+        display: grid;
+        grid-template-columns:auto auto auto;     
+        overflow: hidden;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 0.5rem;
+    }
+    .myImg{
+        height: 15rem;
+        width: 20rem;
+        object-fit: cover;
+    }   
+    .myImg:hover{
+        transform: scale(1.025);
+    }      
+    .modal{     
+        padding-top: 1%; /* Location of the box */       
+    }  
+}

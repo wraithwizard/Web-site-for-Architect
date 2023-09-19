@@ -1,0 +1,133 @@
+/* main css file */
+@import "styles.css";
+
+/* ------------ header ------------*/
+.container__video{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+}
+.overlay{
+    position: relative;
+    z-index: 1;
+    padding-bottom: 14rem;
+}
+
+/*--------------MAIN--------------*/
+.port{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.portofolio__name{
+    color: grey;
+    text-shadow: -1px 0 black, 0 2px black, 0px 0 black, 0 -1px black;
+}
+.port:hover{
+    transform: scale(1.01, 1.01);   
+    background-color: var(--light);
+    opacity: 70%;
+}
+.portofolio__txt{
+    margin-top: 2rem;
+}
+.portofolio__residencias{
+    background-image: url(../img/residential/res5.jpeg);
+}
+.portofolio__depas{
+    background-image: url(../img/depts/depas3.jpeg);
+    background-size: cover; 
+    background-position: center;
+}
+.portofolio__locales{
+    background-image: url(../img/locales/remodelacion.jpeg);
+}
+.portofolio__restaurantes{
+    background-image: url(../img/rest/rest.jpg);
+    background-size: cover; 
+    background-position: center;
+}
+.portofolio__hoteles{
+    background-image: url(../img/const/const1.jpg);
+    background-size: cover; 
+    background-position: center;
+}
+
+/** Fold **/
+@media screen and (max-width: 320px){  
+    .overlay{     
+        padding-bottom: 8rem;
+    }
+    .burger{
+        margin-top: -30rem;
+    }
+    .loader{
+        top: 220px;
+    }
+}
+
+/**smartphone**/
+@media screen and (min-width: 320px) and (max-width: 768px){   
+    .burger{      
+        margin-top: -38rem;
+    }  
+    .nav-links a{       
+        font-size: 1.2rem;
+    }  
+    .portofolio__name{
+        font-size: 1.5rem;
+    }
+}
+
+/* tablet */
+@media screen and (min-width: 768px) {
+    .burger{
+        padding: 0.65rem;      
+        margin-top: -95rem;        
+    }
+    .overlay{
+       padding-bottom: 35rem;        
+    }
+    .portofolio__name{
+        font-size: 4.5rem;
+    }
+    .nav-links a {
+        font-size: 3rem;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    .container__video{
+        height: 30rem;
+        object-fit: cover;
+        object-position: center center;
+    }   
+    .logo__h1{
+        background-color:rgba(68, 206, 252, 0.2);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .burger{
+        padding: 0.65rem;      
+        margin-top: -49rem;        
+    }
+    .overlay{
+       padding-bottom: 30rem;        
+    }
+    .portofolio__name{
+        font-size: 4.5rem;
+    }
+    .nav-links a {
+        font-size: 3rem;
+    }
+    .canvasa{
+        height: 35rem;  
+        max-width: 100%;  
+
+    }
+}
+
